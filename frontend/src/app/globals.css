@@ -1,47 +1,46 @@
+/* Base imports */
 @import "tailwindcss";
 
 body {
-  @apply bg-gradient-to-b from-blue-50 to-white text-slate-800;
+  @apply text-slate-100 bg-black overflow-x-hidden;
 }
 
-/* Perspective ceiling and floor grids */
+/* Grid styling */
 .ceiling-grid,
 .floor-grid {
   position: absolute;
-  left: 50%;
-  transform-origin: center;
-  width: 200%; /* widen so perspective doesn't reveal edges */
-  height: 120%;
-  top: 0;
+  left: 0;
+  width: 200%;
+  height: 200%;
   pointer-events: none;
-  opacity: 0.12;
-  background-image:
-    linear-gradient(to right, rgba(255,255,255,0.12) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255,255,255,0.08) 1px, transparent 1px);
-  background-size: 48px 48px;
+  opacity: 0.15;
+  transform-origin: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  filter: brightness(1.1) contrast(1.2);
+  z-index: 0;
 }
 
-.floor-grid {
-  transform: translateX(-50%) rotateX(75deg) translateY(12% ) scale(1.4);
-  transform-origin: center bottom;
-  bottom: -10%;
-  top: auto;
-  animation: floor-scroll 18s linear infinite;
-}
-
+/* Ceiling grid – push it farther upward */
 .ceiling-grid {
-  transform: translateX(-50%) rotateX(-75deg) translateY(-12%) scale(1.4);
-  transform-origin: center top;
-  top: -10%;
-  animation: ceiling-scroll 22s linear infinite reverse;
+  top: -150%;
+  transform: perspective(800px) rotateX(40deg) translateY(-60%);
+  opacity: 0.9;
 }
 
-@keyframes floor-scroll {
-  from { transform: translateX(-50%) rotateX(75deg) translateY(8%) scale(1.4); }
-  to   { transform: translateX(-50%) rotateX(75deg) translateY(16%) scale(1.4); }
+/* Floor grid – push it farther downward */
+.floor-grid {
+  bottom: -150%;
+  transform: perspective(800px) rotateX(-30deg) translateY(60%);
+  opacity: 0.7;
 }
 
-@keyframes ceiling-scroll {
-  from { transform: translateX(-50%) rotateX(-75deg) translateY(-8%) scale(1.4); }
-  to   { transform: translateX(-50%) rotateX(-75deg) translateY(-16%) scale(1.4); }
+
+.ceiling-grid::after,
+.floor-grid::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0.05), transparent 90%);
+  mix-blend-mode: overlay;
 }

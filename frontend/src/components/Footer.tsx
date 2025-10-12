@@ -3,8 +3,8 @@ export default function Footer() {
     <footer className="py-12 bg-black text-gray-400 text-sm border-t border-gray-800">
       <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 px-8">
         <div>
-          <h3 className="text-lg font-bold text-white mb-2">
-            Quiz<span className="text-pink-500">zy</span>
+          <h3 className="text-lg font-bold ">
+            <span className="bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500 bg-clip-text text-transparent">Quizzy</span>
           </h3>
           <p>The ultimate quiz platform for students and teachers.</p>
         </div>
@@ -13,7 +13,7 @@ export default function Footer() {
           <ul className="space-y-1">
             <li>Home</li>
             <li>Features</li>
-            <li>Pricing</li>
+            <li>About</li>
             <li>Contact</li>
           </ul>
         </div>
@@ -29,13 +29,12 @@ export default function Footer() {
         <div>
           <h4 className="text-white font-semibold mb-2">Contact Us</h4>
           <ul className="space-y-1">
-            <li>contact@company.com</li>
-            <li>(414) 687 - 5892</li>
-            <li>794 Mcallister St, San Francisco</li>
+            <li>shreya.nshi2102@gmail.com</li>
+            <li>+91-9693665031</li>
           </ul>
         </div>
       </div>
-      <p className="text-center text-gray-600 mt-10">© 2025 StuQuiz. All rights reserved.</p>
+      <p className="text-center text-gray-600 mt-10">© 2025 Quizzy. All rights reserved.</p>
     </footer>
   );
 }

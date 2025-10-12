@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import Image from "next/image";
 
 const avatars = [
   "/assets/frame79.png",
@@ -34,10 +35,12 @@ export default function HeroSection() {
         <div className="flex items-center justify-center gap-3 mt-6">
           <div className="flex -space-x-3">
             {avatars.map((src, i) => (
-              <img
+              <Image
                 key={i}
                 src={src}
                 alt={`avatar ${i + 1}`}
+                width={40}
+                height={40}
                 className="w-10 h-10 rounded-full border-2 border-gray-800 object-cover"
               />
             ))}
@@ -49,11 +52,23 @@ export default function HeroSection() {
           </span>
         </div>
       </div>
-      {/* Floor and ceiling perspective grids */}
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="ceiling-grid" aria-hidden="true"></div>
-        <div className="floor-grid" aria-hidden="true"></div>
-      </div>
+     <div className="absolute inset-0 pointer-events-none overflow-hidden">
+  <Image
+    src="/ceil.svg"
+    alt="Ceiling Grid"
+    fill
+    className="ceiling-grid"
+    priority
+  />
+  <Image
+    src="/floor.svg"
+    alt="Floor Grid"
+    fill
+    className="floor-grid"
+    priority
+  />
+</div>
+
     </section>
   );
 }
