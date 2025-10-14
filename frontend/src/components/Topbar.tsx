@@ -14,7 +14,7 @@ export default function Topbar() {
       </div>
 
       <div className="flex items-center gap-4">
-  <button className="px-4 py-2 rounded-lg text-sm font-semibold text-white shadow" style={{ backgroundImage: 'linear-gradient(90deg,var(--accent-from),var(--accent-to))' }}>+ Create New Quiz</button>
+  <button className="px-4 py-2 rounded-lg text-sm font-semibold text-white shadow" style={{ backgroundColor: '#7C3AED' }}>+ Create New Quiz</button>
         <div className="w-10 h-10 rounded-full bg-white/6 flex items-center justify-center text-sm">A</div>
       </div>
     </div>

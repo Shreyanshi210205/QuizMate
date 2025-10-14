@@ -6,10 +6,55 @@ import TopStudents from "@/components/TopStudents";
 import RecentQuizzes from "@/components/RecentQuizzes";
 
 const stats = [
-  { title: "Total Quizzes", value: "2,543", delta: "+12.5%" },
-  { title: "Active Events", value: "2,543", delta: "+12.5%" },
-  { title: "Students", value: "2,543", delta: "+12.5%" },
-  { title: "Avg. Completion", value: "2,543", delta: "-12.5%" },
+  {
+    title: "Total Quizzes",
+    value: "2,543",
+    delta: "+12.5%",
+    color: 'linear-gradient(90deg,var(--accent-from),var(--accent-to))',
+    icon: (
+      <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="3" y="4" width="7" height="7" stroke="white" strokeWidth="1.2" rx="1" />
+        <rect x="14" y="4" width="7" height="7" stroke="white" strokeWidth="1.2" rx="1" />
+      </svg>
+    ),
+  },
+  {
+    title: "Active Events",
+    value: "2,543",
+    delta: "+12.5%",
+    color: 'linear-gradient(90deg,#16a34a,#10b981)',
+    icon: (
+      <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="3" y="5" width="18" height="14" rx="2" stroke="white" strokeWidth="1.2" />
+        <path d="M8 3v4M16 3v4" stroke="white" strokeWidth="1.2" strokeLinecap="round" />
+      </svg>
+    ),
+  },
+  {
+    title: "Students",
+    value: "2,543",
+    delta: "+12.5%",
+    color: 'linear-gradient(90deg,#2563eb,#60a5fa)',
+    icon: (
+      <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M17 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" stroke="white" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
+        <circle cx="12" cy="7" r="3" stroke="white" strokeWidth="1.2" />
+      </svg>
+    ),
+  },
+  {
+    title: "Avg. Completion",
+    value: "2,543",
+    delta: "-12.5%",
+    color: 'linear-gradient(90deg,#f97316,#fb923c)',
+    icon: (
+      <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="3" y="6" width="3" height="12" rx="1" stroke="white" strokeWidth="1.2" />
+        <rect x="9" y="3" width="3" height="15" rx="1" stroke="white" strokeWidth="1.2" />
+        <rect x="15" y="9" width="3" height="9" rx="1" stroke="white" strokeWidth="1.2" />
+      </svg>
+    ),
+  },
 ];
 
 const events = [
@@ -49,13 +94,14 @@ export default function DashboardPage() {
 
           <div className="flex gap-4 mb-8 flex-wrap">
             {stats.map((s, idx) => (
-              <StatCard key={idx} title={s.title} value={s.value} delta={s.delta} />
+              <StatCard key={idx} title={s.title} value={s.value} delta={s.delta} iconColor={s.color} icon={s.icon} />
             ))}
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-6">
             <div className="lg:col-span-2 card-bg rounded-lg p-6">
-              <h3 className="text-lg font-semibold mb-4">Recent Events</h3>
+              <h3 className="text-xl font-semibold mb-1">Recent Events</h3>
+              <div className="text-sm text-gray-400 mb-4">Manage your upcoming and active quiz events</div>
 
               <div className="space-y-4">
                 {events.map(e => (
