@@ -4,7 +4,6 @@ import StatCard from "@/components/StatCard";
 import EventCard from "@/components/EventCard";
 import TopStudents from "@/components/TopStudents";
 import RecentQuizzes from "@/components/RecentQuizzes";
-import Image from "next/image";
 
 const stats = [
   { title: "Total Quizzes", value: "2,543", delta: "+12.5%" },
