@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
-
+import Link from "next/link";
 const avatars = [
   "/assets/frame79.png",
   "/assets/frame80.png",
@@ -27,7 +27,9 @@ export default function HeroSection() {
           Test your knowledge, compete with peers, and win exciting rewards.
         </p>
         <div className="flex justify-center gap-4">
+          <Link href='/auth/signup'>
           <Button className="bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500 text-white hover:opacity-95">Get Started</Button>
+          </Link>
           <Button variant="secondary" className="bg-white text-black hover:bg-gray-200">
             Explore Quizzes
           </Button>

@@ -1,6 +1,7 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 export default function Navbar() {
   return (
@@ -19,15 +20,19 @@ export default function Navbar() {
       </div>
 
       <div className="flex gap-3">
+        <Link href='/auth/signin'>
         <Button
           variant="ghost"
           className="bg-white text-black hover:bg-gray-100 border-transparent"
         >
           Sign In
         </Button>
+        </Link>
+        <Link href='/auth/register'>
         <Button className="bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500 text-white hover:opacity-95">
           Register
         </Button>
+        </Link>
       </div>
     </nav>
   );
