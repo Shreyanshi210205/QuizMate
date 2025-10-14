@@ -1,0 +1,32 @@
+export const eventsData = [
+  {
+    id: 1,
+    title: "Science Mid-term Quiz",
+    description: "Basic concepts of biology for beginners",
+    status: "active",
+    questions: 15,
+    duration: "20 min",
+    completions: 32,
+    created: "Created just now",
+  },
+  {
+    id: 2,
+    title: "Mathematics Weekly Test",
+    description: "Basic concepts of biology for beginners",
+    status: "upcoming",
+    questions: 15,
+    duration: "20 min",
+    completions: 32,
+    created: "Created just now",
+  },
+  {
+    id: 3,
+    title: "Chemistry Quiz #3",
+    description: "Basic concepts of biology for beginners",
+    status: "completed",
+    questions: 15,
+    duration: "20 min",
+    completions: 32,
+    created: "Created just now",
+  },
+]
