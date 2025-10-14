@@ -23,7 +23,7 @@ export default function EventCard({ title, when, participants, badge }: { title:
       </div>
       <div className="flex items-center gap-2">
         {badge === "Live" ? (
-          <span className="bg-gradient-to-r from-var(--accent-from) to-var(--accent-to) text-white px-3 py-1 rounded-md text-sm">View Live</span>
+          <span className="text-white px-3 py-1 rounded-md text-sm" style={{ backgroundColor: '#7C3AED' }}>View Live</span>
         ) : (
           <span className="bg-white/6 px-3 py-1 rounded-md text-sm">Manage</span>
         )}

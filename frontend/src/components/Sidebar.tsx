@@ -93,7 +93,7 @@ function NavItem({ href, label, icon, active = false }: { href: string; label: s
   const activeCls = 'text-white shadow-sm';
   const inactiveCls = 'text-gray-300 hover:bg-white/5 hover:text-white';
 
-  const activeStyle = active ? { backgroundImage: 'linear-gradient(90deg,var(--accent-from),var(--accent-to))' } : undefined;
+  const activeStyle = active ? { backgroundColor: '#7C3AED' } : undefined;
 
   return (
     <Link href={href} className={`${base} ${active ? activeCls : inactiveCls}`} style={activeStyle}>
