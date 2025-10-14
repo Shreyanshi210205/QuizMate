@@ -74,10 +74,10 @@ export default function Sidebar() {
       </div>
 
       <nav className="space-y-2">
-        <NavItem href="/dashboard" label="Dashboard" icon={<IconGrid />} active />
-        <NavItem href="/quizzes" label="Quizzes" icon={<IconBook />} />
-        <NavItem href="/events" label="Events" icon={<IconCalendar />} />
-        <NavItem href="/students" label="Students" icon={<IconUsers />} />
+        <NavItem href="/teacher/dashboard" label="Dashboard" icon={<IconGrid />} active />
+        <NavItem href="/teacher/quizzes" label="Quizzes" icon={<IconBook />} />
+        <NavItem href="/teacher/events" label="Events" icon={<IconCalendar />} />
+        <NavItem href="/teacher/students" label="Students" icon={<IconUsers />} />
       </nav>
 
       <div className="mt-auto pt-6">
