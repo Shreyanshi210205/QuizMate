@@ -2,8 +2,6 @@
 import Link from "next/link";
 import { useState } from "react";
 import { FaUserGraduate, FaChalkboardTeacher } from "react-icons/fa";
-import GoogleLogo from "./../../../../public/assets/google.png";
-import FacebookLogo from "./../../../../public/assets/facebook.png";
 import Image from "next/image";
 
 
@@ -73,11 +71,11 @@ export default function SignupPage() {
 
           <div className="flex gap-4 mb-4">
             <button className="flex-1 border border-gray-300 rounded-lg py-2 flex items-center justify-center gap-2">
-              <Image src={GoogleLogo} alt="Google Logo" className="w-5 h-5" />
+              <Image src='/assets/google.png' alt="Google Logo" width={40} height={40} className="w-5 h-5" />
               <span className="text-gray-500">Google</span>
             </button>
             <button className="flex-1 border border-gray-300 rounded-lg py-2 flex items-center justify-center gap-2">
-              <Image src={FacebookLogo} alt="Facebook Logo" className="w-5 h-5" />
+              <Image src='/assets/facebook.png' alt="Facebook Logo" width={40} height={40} className="w-5 h-5" />
               <span className="text-gray-500 ">Facebook</span>
             </button>
           </div>
