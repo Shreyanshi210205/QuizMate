@@ -30,7 +30,6 @@ export default function EventsPage() {
   return (
     <div className="min-h-screen flex">
       <div className="hidden lg:block">
-        <Sidebar />
       </div>
 
       <div className="flex-1 flex flex-col gap-6 p-8 text-white">

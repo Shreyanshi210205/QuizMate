@@ -3,6 +3,7 @@ import React from "react";
 import Sidebar from "@/components/Sidebar"; // adjust path as needed
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
+import Link from "next/link";
 
 interface Quiz {
   id: number;
@@ -57,8 +58,7 @@ export default function QuizzesPage() {
         );
 
   return (
-    <div className="flex min-h-screen bg-black text-white">
-      <Sidebar />
+    <div className="flex min-h-screen bg-[linear-gradient(90deg,#241236_0%,#000000_45%,#4a1f12_100%)] text-white">
 
       <main className="flex-1 px-10 py-8">
         <div className="flex items-center justify-between mb-8">
@@ -131,9 +131,11 @@ export default function QuizzesPage() {
                   </div>
                 </div>
                 <div className="flex gap-2">
-                  <Button className="bg-white/10 hover:bg-white/20 text-sm">
-                    View
-                  </Button>
+                  <Link href={`/teacher/quizzes/${quiz.id}`}>
+                    <Button className="bg-white/10 hover:bg-white/20 text-sm">
+                      View
+                    </Button>
+                  </Link>
                   <button className="p-2 text-gray-400 hover:text-white">
                     ⋮
                   </button>
