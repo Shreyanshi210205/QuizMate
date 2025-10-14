@@ -1,8 +1,20 @@
 /* Base imports */
 @import "tailwindcss";
 
+:root {
+  --bg: #0b0b0b;
+  --panel: #101113;
+  --muted: #9ca3af;
+  --accent-from: #5813C1;
+  --accent-to: #C45037;
+}
+
+/* Full page background and subtle right glow */
 body {
-  @apply text-slate-100 bg-black overflow-x-hidden;
+  background: linear-gradient(180deg,#050506 0%, #09090a 30%, #0f0f10 100%);
+  color: #e6e6e6;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  overflow-x: hidden;
 }
 
 /* Grid styling */
@@ -44,3 +56,50 @@ body {
   background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0.05), transparent 90%);
   mix-blend-mode: overlay;
 }
+
+/* helper gradient text used in headings */
+.text-gradient-hero {
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  background-image: linear-gradient(90deg, var(--accent-from) 0%, var(--accent-to) 100%);
+}
+
+/* grid overlay for hero-style panels (re-usable) */
+.grid-overlay {
+  background-image:
+    linear-gradient(transparent 1px, rgba(255,255,255,0.02) 1px),
+    linear-gradient(90deg, transparent 1px, rgba(255,255,255,0.02) 1px);
+  background-size: 80px 60px, 80px 60px;
+  opacity: 0.06;
+}
+
+/* small rounded avatars group */
+.avatar {
+  width: 38px;
+  height: 38px;
+  border-radius: 9999px;
+  object-fit: cover;
+  border: 2px solid rgba(0,0,0,0.5);
+}
+
+/* subtle card border */
+.card-border {
+  border: 1px solid rgba(255,255,255,0.04);
+}
+
+/* standard dashboard card background: fill #151518 with 1px stroke #27272A and rounded corners */
+.card-bg {
+  background-color: #151518;
+  border: 1px solid #27272A;
+  border-radius: 12px;
+  box-shadow: 0 1px 0 rgba(255,255,255,0.02) inset, 0 6px 20px rgba(0,0,0,0.5);
+}
+
+/* solid sidebar background to keep it separate from the page gradient */
+.sidebar-bg {
+  background-color: var(--panel);
+}
+
+/* utility for small muted text */
+.muted { color: #9ca3af; }
