@@ -1,6 +1,5 @@
 "use client";
 import React from "react";
-import Sidebar from "@/components/Sidebar"; // adjust path as needed
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
 import Link from "next/link";

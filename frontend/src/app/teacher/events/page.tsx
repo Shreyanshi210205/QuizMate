@@ -7,7 +7,6 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { EventCard } from "./components/EventCard"
 import { eventsData } from "./data"
 import { Filter, Plus } from "lucide-react"
-import Sidebar from "@/components/Sidebar"
 
 export default function EventsPage() {
   const [search, setSearch] = useState("")
