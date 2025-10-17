@@ -38,17 +38,7 @@ export default function RecentQuizzes({ quizzes }: { quizzes: Array<{id:string,t
           </div>
         ))}
 
-        <div className="border-2 border-dashed border-white/6 rounded-lg flex items-center justify-center p-6 text-gray-400">
-          <div className="text-center">
-            <div className="w-12 h-12 rounded-full mx-auto mb-3 flex items-center justify-center" style={{ backgroundColor: '#22113d' }}>
-              <svg className="w-6 h-6 text-[#7C3AED]" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M12 5v14M5 12h14" stroke="#7C3AED" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
-            </div>
-            <div className="text-sm font-medium text-white">Create New Quiz</div>
-            <div className="text-xs text-gray-400 mt-2">Add questions, set time limits and more</div>
-          </div>
-        </div>
+        {/* create tile removed per request */}
       </div>
     </div>
   );
