@@ -11,7 +11,9 @@
 
 /* Full page background and subtle right glow */
 body {
-   @apply bg-[#0c0b0f] text-white;
+  /* explicit background and text color instead of @apply to avoid build-tool errors */
+  background-color: #0c0b0f;
+  color: white;
   background: linear-gradient(180deg,#050506 0%, #09090a 30%, #0f0f10 100%);
   color: #e6e6e6;
   font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;

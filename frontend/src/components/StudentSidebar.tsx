@@ -58,7 +58,7 @@ export default function StudentSidebar() {
 
       <div className="mt-auto pt-6">
         <div className="text-sm text-gray-400 mb-2">Manage</div>
-        <NavItem href="/settings" label="Settings" icon={<IconSettings />} pathname={pathname} />
+        <NavItem href="/student/settings" label="Settings" icon={<IconSettings />} pathname={pathname} />
       </div>
     </aside>
   )
