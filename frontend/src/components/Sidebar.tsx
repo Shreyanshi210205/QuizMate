@@ -135,10 +135,17 @@ export default function Sidebar() {
 
       <div className="pt-6 border-t border-white/10">
         <div className="text-sm text-gray-400 mb-2">Manage</div>
-        <NavItem href="/settings" label="Settings" icon={<IconSettings />} pathname={pathname} />
+        <NavItem href="/teacher/settings" label="Settings" icon={<IconSettings />} pathname={pathname} />
       </div>
     </aside>
   );
+}
+
+interface NavItemProps {
+  href:string;
+  label:string;
+  icon:React.ReactNode;
+  pathname:string;
 }
 
 function NavItem({
@@ -146,12 +153,7 @@ function NavItem({
   label,
   icon,
   pathname,
-}: {
-  href: string;
-  label: string;
-  icon: React.ReactNode;
-  pathname: string;
-}) {
+}: NavItemProps) {
   const isActive = pathname === href;
 
   return (

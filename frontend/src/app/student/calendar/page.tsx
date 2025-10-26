@@ -55,11 +55,8 @@ export default function StudentCalendarPage() {
   }
 
   return (
-    <div className="min-h-screen flex">
-      <div className="hidden lg:block">
-        <StudentSidebar />
-      </div>
-
+    <div className="min-h-screen flex bg-[linear-gradient(90deg,#241236_0%,#000000_45%,#4a1f12_100%)]">
+     
       <div className="flex-1">
         <Topbar />
         <main className="p-8 max-w-[1200px] mx-auto">

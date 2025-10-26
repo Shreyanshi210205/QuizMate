@@ -1,9 +1,14 @@
-import React from 'react'
+import StudentSidebar from "@/components/StudentSidebar";
 
-export default function StudentLayout({ children }: { children: React.ReactNode }) {
-	return (
-		<div className="min-h-screen bg-[linear-gradient(180deg,#050506_0%,#09090a_30%,#0f0f10_100%)] text-white">
-			{children}
-		</div>
-	)
+export default function StudentLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return (
+    <div className="flex min-h-screen bg-black text-white">
+      <StudentSidebar />
+      <main className="flex-1 px-10 py-8 overflow-y-auto">{children}</main>
+    </div>
+  );
 }

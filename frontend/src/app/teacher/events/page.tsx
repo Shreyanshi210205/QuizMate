@@ -27,7 +27,7 @@ export default function EventsPage() {
   )
 
   return (
-    <div className="min-h-screen flex">
+    <div className="min-h-screen flex bg-[linear-gradient(90deg,#241236_0%,#000000_45%,#4a1f12_100%)]">
       <div className="hidden lg:block">
       </div>
 
