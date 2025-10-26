@@ -34,7 +34,7 @@ export default function Footer() {
           </ul>
         </div>
       </div>
-      <p className="text-center text-gray-600 mt-10">© 2025 Quizzy. All rights reserved.</p>
+      <p className="text-center text-gray-600 mt-10">© 2025 QuizMate. All rights reserved.</p>
     </footer>
   );
 }

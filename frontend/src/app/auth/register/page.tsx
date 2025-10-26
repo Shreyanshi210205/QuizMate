@@ -28,7 +28,7 @@ export default function SignupPage() {
                   />
                 </div>
         <h1 className="relative z-10 text-6xl font-bold bg-gradient-to-r from-purple-500 to-pink-500 bg-clip-text text-transparent">
-          Quizzy
+          QuizMate
         </h1>
       </div>
 

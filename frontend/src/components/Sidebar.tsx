@@ -93,7 +93,7 @@ export default function Sidebar() {
               "linear-gradient(90deg,var(--accent-from,#a855f7),var(--accent-to,#7c3aed))",
           }}
         >
-          Quizzy
+          QuizMate
         </h1>
       </div>
 

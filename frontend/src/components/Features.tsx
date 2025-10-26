@@ -69,7 +69,7 @@ export default function Features() {
 
       <h2 className="text-4xl font-bold mb-4">
         <span className="text-white">Why</span>{' '}
-        <span className="bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500 bg-clip-text text-transparent">Quizzy</span>?
+        <span className="bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500 bg-clip-text text-transparent">QuizMate</span>?
       </h2>
       <p className="text-white mb-12">
         Discover features that make learning fun and rewarding

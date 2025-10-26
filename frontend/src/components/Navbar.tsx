@@ -8,7 +8,7 @@ export default function Navbar() {
     <nav className="fixed top-0 w-full z-50 flex justify-between items-center px-10 py-4 bg-black/20 backdrop-blur-md">
       <div className="text-2xl font-bold">
         <span className="bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500 bg-clip-text text-transparent">
-          Quizzy
+          QuizMate
         </span>
       </div>
 

@@ -47,7 +47,7 @@ export default function StudentSidebar() {
   return (
     <aside className="w-64 min-h-screen sticky top-0 px-6 py-6 sidebar-bg">
       <div className="mb-6">
-        <h1 className="text-2xl font-extrabold text-transparent bg-clip-text" style={{ backgroundImage: 'linear-gradient(90deg,var(--accent-from),var(--accent-to))' }}>Quizzy</h1>
+        <h1 className="text-2xl font-extrabold text-transparent bg-clip-text" style={{ backgroundImage: 'linear-gradient(90deg,var(--accent-from),var(--accent-to))' }}>QuizMate</h1>
       </div>
 
       <nav className="space-y-2">

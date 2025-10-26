@@ -6,7 +6,7 @@ import { cn } from "@/lib/utils";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "Quizzy - Learn, Quiz, Earn Rewards",
+  title: "QuizMate - Learn, Quiz, Earn Rewards",
   description: "Join the ultimate quiz platform for students and teachers.",
 };
 

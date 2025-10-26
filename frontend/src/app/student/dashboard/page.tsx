@@ -30,7 +30,7 @@ export default function StudentDashboard() {
         <Topbar />
         <main className="p-8 max-w-[1200px] mx-auto">
           <div className="mb-8">
-            <h1 className="text-3xl font-bold">Dashboard <span className="text-gradient-hero">Quizzy</span></h1>
+            <h1 className="text-3xl font-bold">Dashboard <span className="text-gradient-hero">QuizMate</span></h1>
             <p className="text-sm text-gray-400 mt-1">Welcome back — here are your tests and progress</p>
           </div>
 
