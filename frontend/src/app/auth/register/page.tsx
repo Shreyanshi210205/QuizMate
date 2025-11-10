@@ -45,7 +45,7 @@ export default function SignupPage() {
       </div>
 
       {/* RIGHT FORM */}
-      <div className="flex w-full lg:w-1/2 items-center justify-center bg-white">
+      <div className="flex w-full lg:w-1/2 items-center justify-center bg-white text-black">
         <div className="w-full max-w-md p-8">
           <h2 className="text-2xl font-bold mb-2 text-black">Create Account</h2>
           <p className="text-gray-500 mb-6">Choose your account type and start your journey with us</p>
@@ -69,12 +69,12 @@ export default function SignupPage() {
 
           <form className="space-y-4" onSubmit={handleSignUp}>
             <div className="flex gap-2">
-              <input value={fullName} onChange={(e) => setFullName(e.target.value)} placeholder="Full Name" className="w-1/2 border rounded-lg px-3 py-2" />
-              <input value={username} onChange={(e) => setUsername(e.target.value)} placeholder="Username" className="w-1/2 border rounded-lg px-3 py-2" />
+              <input value={fullName} onChange={(e) => setFullName(e.target.value)} placeholder="Full Name" className="w-1/2 border rounded-lg px-3 py-2 text-black placeholder-gray-500" />
+              <input value={username} onChange={(e) => setUsername(e.target.value)} placeholder="Username" className="w-1/2 border rounded-lg px-3 py-2 text-black placeholder-gray-500" />
             </div>
 
-            <input value={email} onChange={(e) => setEmail(e.target.value)} type="email" placeholder="Email" className="w-full border rounded-lg px-3 py-2" />
-            <input value={password} onChange={(e) => setPassword(e.target.value)} type="password" placeholder="Password" className="w-full border rounded-lg px-3 py-2" />
+            <input value={email} onChange={(e) => setEmail(e.target.value)} type="email" placeholder="Email" className="w-full border rounded-lg px-3 py-2 text-black placeholder-gray-500" />
+            <input value={password} onChange={(e) => setPassword(e.target.value)} type="password" placeholder="Password" className="w-full border rounded-lg px-3 py-2 text-black placeholder-gray-500" />
 
             <button className="w-full bg-purple-600 text-white py-2 rounded-lg hover:bg-purple-700">
               Sign Up

@@ -41,7 +41,7 @@ export default function LoginPage() {
       </div>
 
       {/* RIGHT FORM */}
-      <div className="flex w-full lg:w-1/2 items-center justify-center bg-white">
+      <div className="flex w-full lg:w-1/2 items-center justify-center bg-white text-black">
         <div className="w-full max-w-md p-8">
           <h2 className="text-2xl font-bold text-black mb-6">Welcome back</h2>
 
@@ -50,7 +50,7 @@ export default function LoginPage() {
               value={emailOrUsername}
               onChange={(e) => setEmailOrUsername(e.target.value)}
               placeholder="Email or Username"
-              className="w-full border rounded-lg px-3 py-2"
+              className="w-full border rounded-lg px-3 py-2 text-black placeholder-gray-500"
             />
 
             <input
@@ -58,7 +58,7 @@ export default function LoginPage() {
               onChange={(e) => setPassword(e.target.value)}
               type="password"
               placeholder="Password"
-              className="w-full border rounded-lg px-3 py-2"
+              className="w-full border rounded-lg px-3 py-2 text-black placeholder-gray-500"
             />
 
             <button
