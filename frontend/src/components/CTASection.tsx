@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import Link from 'next/link'
 
 export default function CTASection() {
   return (
@@ -8,10 +9,12 @@ export default function CTASection() {
         Join thousands of students and teachers. Sign up today and get access to all features.
       </p>
       <div className="flex justify-center gap-4">
-        <Button variant="secondary" className="bg-white text-black hover:bg-gray-200">
-          Create Account
-        </Button>
-  <Button className="bg-transparent border border-white text-white hover:bg-white/5">Explore Quizzes</Button>
+        <Link href="/auth/register">
+          <Button variant="secondary" className="bg-white text-black hover:bg-gray-200">
+            Create Account
+          </Button>
+        </Link>
+        <Button className="bg-transparent border border-white text-white hover:bg-white/5">Explore Quizzes</Button>
       </div>
     </section>
   );
