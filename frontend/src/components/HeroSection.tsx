@@ -30,9 +30,6 @@ export default function HeroSection() {
           <Link href="/auth/register">
             <Button className="bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500 text-white hover:opacity-95">Get Started</Button>
           </Link>
-          <Button variant="secondary" className="bg-white text-black hover:bg-gray-200">
-            Explore Quizzes
-          </Button>
         </div>
         <div className="flex items-center justify-center gap-3 mt-6">
           <div className="flex -space-x-3">

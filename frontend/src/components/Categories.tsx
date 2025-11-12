@@ -1,4 +1,5 @@
 import { Card, CardContent } from "@/components/ui/card";
+import Link from 'next/link'
 
 const categories = [
   { title: "Science & Tech", desc: "Test your knowledge in science & tech with our challenging quizzes", color: "from-blue-500 to-purple-500", key: 'science' },
@@ -91,12 +92,9 @@ export default function Categories() {
                 <div className="flex-1 text-left">
                   <h3 className="text-white font-semibold text-lg mb-2">{cat.title}</h3>
                   <p className="text-gray-400 text-sm mb-4">{cat.desc}</p>
-                  <a
-                    href="#"
-                    className={`text-sm font-medium text-transparent bg-clip-text bg-gradient-to-r ${cat.color}`}
-                  >
+                  <Link href="/auth/register" className={`text-sm font-medium text-transparent bg-clip-text bg-gradient-to-r ${cat.color}`}>
                     Explore Quizzes →
-                  </a>
+                  </Link>
                 </div>
               </div>
             </CardContent>

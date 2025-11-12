@@ -14,7 +14,6 @@ export default function CTASection() {
             Create Account
           </Button>
         </Link>
-        <Button className="bg-transparent border border-white text-white hover:bg-white/5">Explore Quizzes</Button>
       </div>
     </section>
   );
