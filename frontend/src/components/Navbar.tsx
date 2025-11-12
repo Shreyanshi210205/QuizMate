@@ -12,12 +12,7 @@ export default function Navbar() {
         </span>
       </div>
 
-      <div className="hidden md:flex gap-8 text-sm text-gray-300">
-        <a href="#">Quiz</a>
-        <a href="#">Weekly Quiz</a>
-        <a href="#">Rewards</a>
-        <a href="#">About</a>
-      </div>
+      {/* removed Quiz / Weekly Quiz / Rewards / About as requested */}
 
       <div className="flex gap-3">
         <Link href='/auth/signin'>
