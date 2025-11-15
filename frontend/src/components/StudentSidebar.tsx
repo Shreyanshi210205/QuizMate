@@ -1,7 +1,7 @@
 "use client"
 import Link from "next/link"
 import React from "react"
-import { usePathname } from 'next/navigation'
+import { usePathname, useRouter } from 'next/navigation'
 
 function IconGrid({ className = 'w-5 h-5' }: { className?: string }) {
   return (
@@ -41,8 +41,27 @@ function IconSettings({ className = 'w-4 h-4' }: { className?: string }) {
   )
 }
 
+function IconLogout({ className = 'w-4 h-4' }: { className?: string }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none">
+      <path d="M16 17l5-5-5-5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M21 12H9" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M13 19H6a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h7" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  )
+}
+
 export default function StudentSidebar() {
   const pathname = usePathname();
+  const router = useRouter();
+
+  function handleLogout() {
+    try {
+      localStorage.removeItem('quizzy_token');
+      localStorage.removeItem('quizzy_user');
+    } catch (e) {}
+    router.push('/');
+  }
 
   return (
     <aside className="w-64 min-h-screen sticky top-0 px-6 py-6 sidebar-bg">
@@ -59,6 +78,12 @@ export default function StudentSidebar() {
       <div className="mt-auto pt-6">
         <div className="text-sm text-gray-400 mb-2">Manage</div>
         <NavItem href="/student/settings" label="Settings" icon={<IconSettings />} pathname={pathname} />
+        <div className="mt-4">
+          <button onClick={handleLogout} className="w-full flex items-center gap-3 px-3 py-2 rounded-lg text-sm text-gray-300 hover:bg-white/5 hover:text-white transition-colors duration-200">
+            <span><IconLogout /></span>
+            <span>Logout</span>
+          </button>
+        </div>
       </div>
     </aside>
   )
