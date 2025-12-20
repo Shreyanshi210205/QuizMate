@@ -7,24 +7,27 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { EventCard } from "./components/EventCard"
 import { eventsData } from "./data"
 import { Filter, Plus } from "lucide-react"
+import { Event } from "@/types/event"
 
 export default function EventsPage() {
   const [search, setSearch] = useState("")
 
-  type EventItem = {
-    id: number | string
-    title: string
-    description?: string
-    status?: string
-    questions?: number
-    duration?: string
-    completions?: number
-    created?: string
-  }
+const normalizedEvents: Event[] = eventsData.map((event) => ({
+  id: String(event.id),
+  title: event.title,
+  description: event.description ?? "",
+  status: (event.status ?? "upcoming") as Event["status"],
+  questions: event.questions ?? 0,
+  duration: event.duration ?? "0 mins",
+  completions: event.completions ?? 0,
+  created: event.created ?? "",
+}))
 
-  const filteredEvents: EventItem[] = eventsData.filter((event: EventItem) =>
-    event.title.toLowerCase().includes(search.toLowerCase())
-  )
+
+ const filteredEvents = normalizedEvents.filter((event) =>
+  event.title.toLowerCase().includes(search.toLowerCase())
+)
+
 
   return (
     <div className="min-h-screen flex bg-[linear-gradient(90deg,#241236_0%,#000000_45%,#4a1f12_100%)]">

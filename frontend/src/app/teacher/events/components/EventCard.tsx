@@ -3,9 +3,16 @@
 import { Button } from "@/components/ui/button"
 import { MoreVertical, Clock, Users, FileQuestion } from "lucide-react"
 import { cn } from "@/lib/utils"
+import { Event } from "@/types/event"
 
-export function EventCard({ event }) {
-  const statusColor = {
+
+
+type EventCardProps = {
+  event: Event
+}
+
+export function EventCard({ event }:EventCardProps) {
+  const statusColor: Record<Event["status"], string> = {
     active: "bg-green-600/20 text-green-400",
     upcoming: "bg-blue-600/20 text-blue-400",
     completed: "bg-gray-600/20 text-gray-400",
