@@ -13,7 +13,168 @@ model User {
   username  String   @unique
   email     String   @unique
   password  String
-  role      String   @default("student")
+  role      String   @default("student") // "student" or "teacher"
+  year      String?  // For students: "1", "2", "3", "4"
+  semester  String?  // For students: "1" to "8"
+  department String? // e.g., "Computer Science", "Mechanical"
+  location  String?  // "classroom", "home", "hostel"
   createdAt DateTime @default(now())
+  updatedAt DateTime @default(now()) @updatedAt
+  
+  // Relations
+  createdQuizzes  Quiz[]         @relation("TeacherQuizzes")
+  quizAttempts    QuizAttempt[]
+  notifications   Notification[]
+}
+
+model Quiz {
+  id          String   @id @default(uuid())
+  title       String
+  description String?
+  subject     String
+  syllabus    String   @db.Text // Topics covered
+  year        String   // Target year: "1", "2", "3", "4"
+  semester    String   // Target semester: "1" to "8"
+  department  String   // Target department
+  duration    Int      // Duration in minutes
+  totalMarks  Int      @default(0)
+  passingMarks Int     @default(0)
+  
+  // Proctoring settings
+  enableCamera      Boolean @default(false)
+  enableTabSwitch   Boolean @default(false)
+  allowedLocations  String? // JSON array: ["classroom", "home"]
+  
+  // Scheduling
+  scheduledAt DateTime?
+  startTime   DateTime?
+  endTime     DateTime?
+  
+  // Status
+  isPublished Boolean  @default(false)
+  isActive    Boolean  @default(true)
+  
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  
+  // Relations
+  teacherId   String
+  teacher     User       @relation("TeacherQuizzes", fields: [teacherId], references: [id], onDelete: Cascade)
+  questions   Question[]
+  attempts    QuizAttempt[]
+  
+  @@index([teacherId])
+  @@index([year, semester, department])
+}
+
+model Question {
+  id          String   @id @default(uuid())
+  quizId      String
+  questionText String  @db.Text
+  questionType String  // "mcq", "short", "long"
+  marks       Int      @default(1)
+  order       Int      // Question order in quiz
+  
+  // For MCQ
+  options     Option[]
+  correctAnswer String? // For MCQ - option id, for short/long - model answer
+  
+  // Media
+  imageUrl    String?
+  
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  
+  // Relations
+  quiz        Quiz     @relation(fields: [quizId], references: [id], onDelete: Cascade)
+  answers     Answer[]
+  
+  @@index([quizId])
+}
+
+model Option {
+  id          String   @id @default(uuid())
+  questionId  String
+  optionText  String   @db.Text
+  optionLabel String   // "A", "B", "C", "D"
+  
+  createdAt   DateTime @default(now())
+  
+  // Relations
+  question    Question @relation(fields: [questionId], references: [id], onDelete: Cascade)
+  
+  @@index([questionId])
+}
+
+model QuizAttempt {
+  id          String   @id @default(uuid())
+  quizId      String
+  studentId   String
+  
+  // Attempt details
+  startedAt   DateTime @default(now())
+  submittedAt DateTime?
+  status      String   @default("in-progress") // "in-progress", "submitted", "evaluated"
+  
+  // Scoring
+  totalScore  Float    @default(0)
+  percentage  Float    @default(0)
+  passed      Boolean  @default(false)
+  
+  // Proctoring data
+  tabSwitchCount Int    @default(0)
+  location       String? // Student's location during quiz
+  
+  // Relations
+  quiz        Quiz     @relation(fields: [quizId], references: [id], onDelete: Cascade)
+  student     User     @relation(fields: [studentId], references: [id], onDelete: Cascade)
+  answers     Answer[]
+  
+  @@unique([quizId, studentId]) // One attempt per student per quiz
+  @@index([quizId])
+  @@index([studentId])
+}
+
+model Answer {
+  id            String   @id @default(uuid())
+  attemptId     String
+  questionId    String
+  answerText    String?  @db.Text // For short/long answers or selected option
+  selectedOptionId String? // For MCQ
+  
+  // Grading
+  isCorrect     Boolean? // Auto-graded for MCQ
+  marksAwarded  Float    @default(0)
+  
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+  
+  // Relations
+  attempt       QuizAttempt @relation(fields: [attemptId], references: [id], onDelete: Cascade)
+  question      Question    @relation(fields: [questionId], references: [id], onDelete: Cascade)
+  
+  @@unique([attemptId, questionId]) // One answer per question per attempt
+  @@index([attemptId])
+  @@index([questionId])
+}
+
+model Notification {
+  id        String   @id @default(uuid())
+  userId    String
+  title     String
+  message   String   @db.Text
+  type      String   // "quiz_scheduled", "quiz_result", "reminder"
+  isRead    Boolean  @default(false)
+  
+  // Optional link
+  linkTo    String?  // e.g., "/student/quizzes/123"
+  
+  createdAt DateTime @default(now())
+  
+  // Relations
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  
+  @@index([userId])
+  @@index([isRead])
 }
 
